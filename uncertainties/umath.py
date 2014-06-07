@@ -202,14 +202,14 @@ erf_coef = 2/math.sqrt(math.pi)  # Optimization for erf()
 
 fixed_derivatives = {
     # In alphabetical order, here:
-    'acos': [lambda x: -1/math.sqrt(1-x**2)],
-    'acosh': [lambda x: 1/math.sqrt(x**2-1)],
-    'asin': [lambda x: 1/math.sqrt(1-x**2)],
-    'asinh': [lambda x: 1/math.sqrt(1+x**2)],
-    'atan': [lambda x: 1/(1+x**2)],
-    'atan2': [lambda y, x: x/(x**2+y**2),  # Correct for x == 0
-              lambda y, x: -y/(x**2+y**2)],  # Correct for x == 0
-    'atanh': [lambda x: 1/(1-x**2)],
+    'arccos': [lambda x: -1/math.sqrt(1-x**2)],
+    'arccosh': [lambda x: 1/math.sqrt(x**2-1)],
+    'arcsin': [lambda x: 1/math.sqrt(1-x**2)],
+    'arcsinh': [lambda x: 1/math.sqrt(1+x**2)],
+    'arctan': [lambda x: 1/(1+x**2)],
+    'arctan2': [lambda y, x: x/(x**2+y**2),  # Correct for x == 0
+                lambda y, x: -y/(x**2+y**2)],  # Correct for x == 0
+    'arctanh': [lambda x: 1/(1-x**2)],
     'copysign': [_deriv_copysign,
                  lambda x, y: 0],
     'cos': [lambda x: -math.sin(x)],
